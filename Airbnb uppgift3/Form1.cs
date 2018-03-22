@@ -24,10 +24,10 @@ namespace Airbnb_uppgift3
         public Form1()
         {
             InitializeComponent();
-            conn.ConnectionString = "Data Source=JEROME\\SERVER2017; Initial Catalog=Airbnb; Integrated Security=True";
+            conn.ConnectionString = "Data Source=DESKTOP-0KMEDJA\\SQL2017;Initial Catalog=airbnbtest;Integrated Security=True";
         }
         private List<Accomodation> GetData(string myCity)
-        {
+        { //bra lösning med metod GetData och variabeln "myCity" för att få data från dem olika städerna.
 
 
 
@@ -38,7 +38,7 @@ namespace Airbnb_uppgift3
             {
                 conn.Open();
                 
-                SqlCommand myQuery = new SqlCommand("SELECT * FROM " +myCity+ ";", conn);
+                SqlCommand myQuery = new SqlCommand("SELECT * FROM " +myCity+ ";", conn); 
                 SqlDataReader myReader = myQuery.ExecuteReader();
 
                 int Room_id;
@@ -123,12 +123,12 @@ namespace Airbnb_uppgift3
         }
         private void cityData()
         {
-            List<Accomodation> amsterdamlist = GetData("amsterdam");
-            City Amsterdam1 = new City("amsterdam", 0, 0, 0, amsterdamlist);
-            List<Accomodation> bostonlist = GetData("boston");
-            City Boston1 = new City("boston", 0, 0, 0, bostonlist);
-            List<Accomodation> barcelonalist = GetData("barcelona");
-            City Barcelona1 = new City("barcelona", 0, 0, 0, barcelonalist);
+            List<Accomodation> amsterdamlist = GetData("Amsterdam");
+            City Amsterdam1 = new City("Amsterdam", 0, 0, 0, amsterdamlist);
+            List<Accomodation> bostonlist = GetData("Boston");
+            City Boston1 = new City("Boston", 0, 0, 0, bostonlist);
+            List<Accomodation> barcelonalist = GetData("Barcelona");
+            City Barcelona1 = new City("Barcelona", 0, 0, 0, barcelonalist);
 
             valStadA = Amsterdam1;
             valStadBa = Barcelona1;

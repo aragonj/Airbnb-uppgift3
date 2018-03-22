@@ -24,7 +24,7 @@ namespace Airbnb_uppgift3
 
             Accommodates = accommodates;
 
-            AverageCost = accommodates.Average(a => a.Price);   // LINQ, beräkna medelvärde
+           // AverageCost = accommodates.Average(a => a.Price);   // LINQ, beräkna medelvärde
 
             countValues = accommodates.Count();    // LINQ, beräkna antal
 
