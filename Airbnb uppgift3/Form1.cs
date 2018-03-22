@@ -19,17 +19,17 @@ namespace Airbnb_uppgift3
         private City valStadA;
         private City valStadBa;
         private City valStadBo;
-        
+
 
         public Form1()
         {
             InitializeComponent();
-            conn.ConnectionString = "Data Source=JEROME\\SERVER2017; Initial Catalog=Airbnb; Integrated Security=True";
+            conn.ConnectionString = "Data Source=LAPTOP2\\TESTSQL; Initial Catalog=AirbnbTest; Integrated Security=True";
         }
-        private List<Accomodation> GetData(string myCity)
+        private List<Accomodation> GetData(string myCity)  //bra att använda en seperat metod
         {
 
-
+             //JR- Stor gap här
 
             List<Accomodation> accomodationsList = new List<Accomodation>();
 
@@ -37,8 +37,8 @@ namespace Airbnb_uppgift3
             try
             {
                 conn.Open();
-                
-                SqlCommand myQuery = new SqlCommand("SELECT * FROM " +myCity+ ";", conn);
+
+                SqlCommand myQuery = new SqlCommand("SELECT * FROM " + myCity + ";", conn); //JR bra lösning att ta använda stt sträng att bestämma city
                 SqlDataReader myReader = myQuery.ExecuteReader();
 
                 int Room_id;
@@ -138,9 +138,9 @@ namespace Airbnb_uppgift3
         }
         private void chart1_Click(object sender, EventArgs e)
         {
-            
+
         }
-        private void plotchartA()
+        private void plotchartA() //JR-behovs axis och chart titlar 
         {
             List<Accomodation> scatterList = valStadA.Accommodates;
 
@@ -154,7 +154,7 @@ namespace Airbnb_uppgift3
             }
             chart1.Series["Amsterdam"].ChartType = SeriesChartType.Point;
         }
-        private void plotchartBo()
+        private void plotchartBo()//JR-behovs axis och chart titlar 
         {
             List<Accomodation> scatterList = valStadBo.Accommodates;
 
@@ -168,7 +168,7 @@ namespace Airbnb_uppgift3
             }
             chart2.Series["Boston"].ChartType = SeriesChartType.Point;
         }
-        private void plotchartBa()
+        private void plotchartBa()//JR-behovs axis och chart titlar 
         {
             List<Accomodation> scatterList = valStadBa.Accommodates;
 
@@ -183,7 +183,7 @@ namespace Airbnb_uppgift3
             chart3.Series["Barcelona"].ChartType = SeriesChartType.Point;
         }
 
-        private void histogramA()
+        private void histogramA()//JR-behovs axis och chart titlar 
         {
             List<Accomodation> histList = valStadA.Accommodates;
 
@@ -197,7 +197,7 @@ namespace Airbnb_uppgift3
             chart4.Series["Amsterdam"].ChartType = SeriesChartType.Column;
         }
 
-        private void histogramBo()
+        private void histogramBo()//JR-behovs axis och chart titlar 
         {
             List<Accomodation> histList = valStadBo.Accommodates;
 
@@ -211,7 +211,7 @@ namespace Airbnb_uppgift3
             chart5.Series["Boston"].ChartType = SeriesChartType.Column;
         }
 
-        private void histogramBa()
+        private void histogramBa()//JR-behovs axis och chart titlar 
         {
             List<Accomodation> histList = valStadBa.Accommodates;
 
@@ -225,7 +225,7 @@ namespace Airbnb_uppgift3
             chart6.Series["Barcelona"].ChartType = SeriesChartType.Column;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //JR- smart!!
         {
             cityData();
             plotchartA();
@@ -240,12 +240,12 @@ namespace Airbnb_uppgift3
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
-            
+
         }
 
         private void chart2_Click(object sender, EventArgs e)
@@ -253,5 +253,12 @@ namespace Airbnb_uppgift3
 
         }
     }
-  
+
 }
+/*JR- Allt ser ut jätte klart och tydligt
+ * Bra variable namn men det blanda mellan svenska och engleska
+ * Älska dina metoder att reducera kodmassa
+ * 
+ * Inga Felkontrol när connection inte uppkoppla, finns inga console i WindowsForms,bättre med messagebox
+ * 
+ */
