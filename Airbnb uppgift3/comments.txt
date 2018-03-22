@@ -1,1 +1,12 @@
-﻿Bra jobbat med klasserna. Tydliga, bra och smidiga kopplingar mellan dem.
+﻿Kommentarer på Jeromes kod:  // Carl Wallteg
+
+Bra jobbat med klasserna. 
+Tydliga, bra och smidiga kopplingar mellan dem.
+
+Smidig hantering av variabler och metoder.
+Bra att du använder metoder för att få fram charterna.
+Blir tydligt och bra kodmässigt när du delar upp dem olika charterna.
+Något som du gärna får tänka på är att kommentera lite mer i koden så blir det ännu
+enklare som utomstående att förstå vad varje del i koden har för funktion.
+
+Men som sagt, koden är ändå tydlig och bra och går bra att sätta sig in i.
